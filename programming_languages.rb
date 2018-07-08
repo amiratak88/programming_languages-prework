@@ -5,11 +5,6 @@ def reformat_languages(languages)
     langs.keys.each do |lang|
       new_hash[lang] = {
       :type => languages[style][lang][:type],
-      if new_hash.keys.incule(lang)
-        new_hash[lang][:style] << style
-      else
-        :style => [style.to_s]
-      end
       }
     end
   end
