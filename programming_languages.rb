@@ -3,13 +3,12 @@ def reformat_languages(languages)
   new_hash = {}
   languages.each do |style, langs|
     langs.keys.each do |lang|
-      new_hash[lang] = {
-      :type => languages[style][lang][:type],
-      }
-      if new_hash.keys.incule?(lang)
-        new_hash[lang][:style] << style.to_s
+      if new_hash[lang] == nil
+        new_hash[lang] = {}
+        new_hash[lang][:type] = languages[style][lang][:type]
+        new_hash[lang][:style] = [style]
       else
-        new_hash[lang][:style] = [style.to_s]
+        new_hash[lang][:style] << style
       end
     end
   end
