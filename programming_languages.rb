@@ -6,7 +6,7 @@ def reformat_languages(languages)
       new_hash[lang] = {
       :type => languages[style][lang][:type],
       }
-      if new_hash.keys.incule(lang)
+      if new_hash.keys.incule?(lang)
         new_hash[lang][:style] << style.to_s
       else
         new_hash[lang][:style] = [style.to_s]
