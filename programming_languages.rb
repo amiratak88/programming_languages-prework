@@ -7,9 +7,9 @@ def reformat_languages(languages)
       :type => languages[style][lang][:type],
       }
       if new_hash.keys.incule(lang)
-        new_hash[lang][:style] << style
+        new_hash[lang][:style] << style.to_s
       else
-        :style => [style.to_s]
+        new_hash[lang][:style] = [style.to_s]
       end
     end
   end
